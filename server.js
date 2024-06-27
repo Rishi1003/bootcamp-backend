@@ -8,6 +8,9 @@ const mongoose = require("mongoose")
 
 const bcrypt = require("bcrypt")
 
+const PORT = process.env.PORT || 3000
+
+
 const blog_schema = new mongoose.Schema({
     title:{
         type: String,
@@ -125,6 +128,6 @@ app.delete("/blog/:id",async (req,res)=>{
     res.send(response)
 })
 
-app.listen(3000,()=>{
-    console.log('server has started in port 3000');
+app.listen(PORT,()=>{
+    console.log('server has started in port',PORT);
 })
